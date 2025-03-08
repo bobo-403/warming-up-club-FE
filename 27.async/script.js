@@ -32,3 +32,17 @@ fetch('http://jsonplaceholder.typicode.com/todos/1') // 프로미스 지원함
   .finally(() => {
     console.log('작업 끝!');
   });
+
+async function makeRequest() {
+  try {
+    const reponse1 = await fetch('http://jsonplaceholder.typicode.com/todos/1');
+    const jsonResponse1 = await reponse1.json();
+    console.log(jsonResponse1);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    console.log('---모든 작업 끝---');
+  }
+}
+
+makeRequest();
