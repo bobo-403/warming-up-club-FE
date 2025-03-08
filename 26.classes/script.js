@@ -20,3 +20,25 @@ class Person {
 
 const john = new Person('john', 'john@example.com', '10-3-98');
 console.log(john);
+
+class Person1 {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  introduce() {
+    return `Hello my name is ${this.name} `;
+  }
+}
+
+class Client extends Person1 {
+  constructor(name, email, phone, address) {
+    super(name, email);
+    this.phone = phone;
+    this.address = address;
+  }
+}
+
+const han = new Client('han', 'han@example.com', '010-0000-0000', '서울');
+console.log(han.introduce());
