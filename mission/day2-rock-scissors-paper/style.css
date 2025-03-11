@@ -1,50 +1,46 @@
 body{
-  background-color: #f7f7f7;
   text-align: center;
-  margin: 0px;
-  height: 100%;
-}
-
-.container{
-  margin: 0px 150px;
-  background-color: #ff00004f;
-  height: 100%;
+  margin: 100px;
 }
 
 h1{
-  padding: 30px;
-  margin: 0px;
-  padding-top: 80px;
   font-size: xxx-large;
+  margin: 25px;
 }
 
 .score-board{
+  padding: 40px 250px;
   display: flex;
   justify-content: space-evenly;
-  padding: 30px 270px;
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: bolder;
 }
 
-.score-board div div{
-  padding: 10px;
+.score-board div{
+  padding: 10px
 }
 
 .time{
-  font-size: large;
+  font-size: xx-large;
   font-weight: bolder;
-  padding: 10px;
+  padding-bottom: 40px;
 }
 
-.select{
-  font-size: x-large;
-  font-weight: bolder;
-  padding: 30px;
-  padding-bottom: 100px;
+button{
+  border: none;
+  min-height: 50px;
+  min-width: 100px;
+  margin: 10px 20px;
+  border-radius: 5px;
+  font-size: larger;
 }
 
-img{
-  height: 120px;
-  padding: 30px 72px;
+button:hover{
+  background-color: #0a2a8a63;
 }
 
+.result{
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 20px;
+}

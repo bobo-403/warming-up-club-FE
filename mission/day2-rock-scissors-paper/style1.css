@@ -1,0 +1,50 @@
+body{
+  background-color: #f7f7f7;
+  text-align: center;
+  margin: 0px;
+  height: 100%;
+}
+
+.container{
+  margin: 0px 150px;
+  background-color: #ff000026;
+  height: 100%;
+}
+
+h1{
+  padding: 30px;
+  margin: 0px;
+  padding-top: 80px;
+  font-size: xxx-large;
+}
+
+.score-board{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px 270px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.score-board div div{
+  padding: 10px;
+}
+
+.time{
+  font-size: large;
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.select{
+  font-size: x-large;
+  font-weight: bolder;
+  padding: 30px;
+  padding-bottom: 100px;
+}
+
+img{
+  height: 120px;
+  padding: 30px 72px;
+}
+
