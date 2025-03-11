@@ -20,6 +20,7 @@ nav button{
   width: 100px;
   position: relative;
   z-index: 2;
+  border-bottom: 2.5px solid #bcbcbc;
 }
 
 nav hr {
@@ -35,6 +36,7 @@ nav hr {
 
 #selected{
   border-bottom: 2.5px solid black;
+  transition: border-bottom 0.3s ease-in-out;
 }
 
 .menu-wrapper{
@@ -45,7 +47,7 @@ nav hr {
 
 .menu{
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   padding: 25px 10px 0px 20px;
   width: 452px;
 }
@@ -69,4 +71,8 @@ nav hr {
 .menu-describe{
   font-size: 12px;
   color: #626d6d;
+}
+
+.footer{
+  padding: 50px 0px;
 }
