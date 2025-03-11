@@ -9,19 +9,19 @@
   },
   {
     "id": 2,
+    "name": "오픈 샌드위치",
+    "type": "platter",
+    "price": 13000,
+    "description": "사워도우 브레드 위에 리코타 치즈, 프로슈토, 루꼴라를 올리고 반숙 계란과 올리브를 곁들인 오픈 샌드위치",
+    "image": "image/platter/open_sandwich.jpg"
+  },
+  {
+    "id": 3,
     "name": "쉬림프 로스트",
     "type": "platter",
     "price": 27000,
     "description": "시소와 루꼴라살사를 곁들인 블랙타이거새우 로스트",
     "image": "image/platter/shrmip_roast.jpeg"
-  },
-  {
-    "id": 3,
-    "name": "오픈 샌드위치",
-    "type": "platter",
-    "price": 13000,
-    "description": "사워도우 브레드 위에 리코타 치즈, 프로슈토, 루꼴라를 올리고 반숙 계란과 올리브를 곁들인 오픈 샌드위치",
-    "image": "image/platter/open_sandwich.jpeg"
   },
   {
     "id": 4,
@@ -85,7 +85,7 @@
     "type": "dessert",
     "price": 4000,
     "description": "고소한 버터의 풍미가 가득한 바삭한 쿠키",
-    "image": "image/dessert/cookie.png"
+    "image": "image/dessert/cookie.jpg"
   },
   {
     "id": 12,
@@ -109,50 +109,10 @@
     "type": "bush",
     "price": 7000,
     "description": "진한 말차 아이스크림에 블루베리를 올린 말차 부쉬",
-    "image": "image/bush/green_tea_bush.jpg"
+    "image": "image/bush/green_tea_bush.png"
   },
   {
     "id": 15,
-    "name": "아이스 아메리카노",
-    "type": "drink",
-    "price": 7000,
-    "description": "깊고 진한 에스프레소에 물을 더해 깔끔한 맛을 살린 아메리카노",
-    "image": "image/drink/americano.jpeg"
-  },
-  {
-    "id": 16,
-    "name": "카페 라떼",
-    "type": "drink",
-    "price": 7000,
-    "description": "부드러운 우유와 진한 에스프레소가 조화를 이루는 카페라떼",
-    "image": "image/drink/caffe_latte.jpeg"
-  },
-  {
-    "id": 17,
-    "name": "바닐라 라떼",
-    "type": "drink",
-    "price": 7000,
-    "description": "진한 에스프레소에 부드러운 우유와 바닐라의 달콤함을 더한 바닐라 라떼",
-    "image": "image/drink/vanilla_latte.jpeg"
-  },
-  {
-    "id": 18,
-    "name": "플랫 화이트",
-    "type": "drink",
-    "price": 7000,
-    "description": "벨벳처럼 부드러운 스팀 밀크와 에스프레소가 어우러진 플랫화이트",
-    "image": "image/drink/flat_white.jpeg"
-  },
-  {
-    "id": 19,
-    "name": "밀크 쉐이크",
-    "type": "drink",
-    "price": 7000,
-    "description": "진한 우유와 달콤한 아이스크림을 블렌딩한 부드러운 밀크쉐이크",
-    "image": "image/drink/milk_shake.jpeg"
-  },
-  {
-    "id": 20,
     "name": "미모사",
     "type": "drink",
     "price": 7000,
@@ -160,7 +120,7 @@
     "image": "image/drink/mimosa.jpeg"
   },
   {
-    "id": 21,
+    "id": 16,
     "name": "레몬 케일 주스",
     "type": "drink",
     "price": 7000,
@@ -168,11 +128,51 @@
     "image": "image/drink/lemon_cail_juice.jpg"
   },
   {
-    "id": 22,
+    "id": 17,
+    "name": "밀크 쉐이크",
+    "type": "drink",
+    "price": 7000,
+    "description": "진한 우유와 달콤한 아이스크림을 블렌딩한 부드러운 밀크쉐이크",
+    "image": "image/drink/milk_shake.jpeg"
+  },
+  {
+    "id": 18,
     "name": "ABC 주스",
     "type": "drink",
     "price": 7000,
     "description": "사과, 비트, 당근을 착즙해 만든 건강한 ABC 주스",
     "image": "image/drink/abc_juice.jpeg"
+  },
+  {
+    "id": 19,
+    "name": "아이스 아메리카노",
+    "type": "drink",
+    "price": 7000,
+    "description": "깊고 진한 에스프레소에 물을 더해 깔끔한 맛을 살린 아메리카노",
+    "image": "image/drink/americano.jpeg"
+  },
+  {
+    "id": 20,
+    "name": "카페 라떼",
+    "type": "drink",
+    "price": 7000,
+    "description": "부드러운 우유와 진한 에스프레소가 조화를 이루는 카페라떼",
+    "image": "image/drink/caffe_latte.jpeg"
+  },
+  {
+    "id": 21,
+    "name": "바닐라 라떼",
+    "type": "drink",
+    "price": 7000,
+    "description": "진한 에스프레소에 부드러운 우유와 바닐라의 달콤함을 더한 바닐라 라떼",
+    "image": "image/drink/vanilla_latte.jpeg"
+  },
+  {
+    "id": 22,
+    "name": "플랫 화이트",
+    "type": "drink",
+    "price": 7000,
+    "description": "벨벳처럼 부드러운 스팀 밀크와 에스프레소가 어우러진 플랫화이트",
+    "image": "image/drink/flat_white.jpeg"
   }
 ]
