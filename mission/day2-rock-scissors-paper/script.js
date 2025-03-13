@@ -1,69 +1,74 @@
-const randomHand = ['Rock', 'Sicssors', 'Paper'];
+const hand = ['Rock', 'Sicssors', 'Paper'];
+const leftCount = document.getElementById('count');
+const playerScore = document.getElementById('player_score');
+const computeScore = document.getElementById('computer_score');
+const result = document.querySelector('.result');
+
+function randomComHand() {
+  return hand[Math.floor(Math.random() * 3)];
+}
+
+function getResult(playerHand, computerHand) {
+  if (
+    (playerHand === 'Rock' && computerHand === 'Rock') ||
+    (playerHand === 'Sicssors' && computerHand === 'Sicssors') ||
+    (playerHand === 'Paper' && computerHand === 'Paper')
+  )
+    return 'draw!';
+  if (
+    (playerHand === 'Rock' && computerHand === 'Sicssors') ||
+    (playerHand === 'Sicssors' && computerHand === 'Paper') ||
+    (playerHand === 'Paper' && computerHand === 'Rock')
+  ) {
+    ++playerScore.textContent;
+    return 'win!';
+  }
+  ++computeScore.textContent;
+  return 'lose!';
+}
+
+function handBntHandler(e) {
+  const playerHand = e.target.textContent;
+  const computerHand = randomComHand();
+  const resultText = getResult(playerHand, computerHand);
+  result.textContent = resultText;
+}
+
+function retryBntHandler(e) {
+  e.target.classList.add('hidden');
+  const hands = document.querySelectorAll('.hand');
+  hands.forEach((hand) => hand.classList.remove('hidden'));
+  leftCount.textContent = 10;
+  playerScore.textContent = 0;
+  computeScore.textContent = 0;
+  result.textContent = '';
+}
+
+function viewFinalResult() {
+  const hands = document.querySelectorAll('.hand');
+  hands.forEach((hand) => hand.classList.add('hidden'));
+  const retry = document.querySelector('.retry');
+  retry.classList.remove('hidden');
+  if (computeScore.innerText === playerScore.innerText)
+    result.innerText = 'Final Result : DRAW!';
+  else {
+    const status =
+      playerScore.innerText > computeScore.innerText ? 'WIN!' : 'LOSE!';
+    result.innerText = `Final Result : ${status}`;
+  }
+}
 
 function main() {
-  const buttons = document.querySelectorAll('button');
-  const result = document.querySelector('.result');
-  const playerScore = document.getElementById('player_score');
-  const computeScore = document.getElementById('computer_score');
+  const buttonWrapper = document.querySelector('.button-wrapper');
+  buttonWrapper.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'BUTTON') return;
 
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const countElement = document.getElementById('time');
-      let count = Number(countElement.innerText);
-      if (count === 0) return;
+    if (e.target.textContent === 'Retry') return retryBntHandler(e);
 
-      countElement.innerText = --count;
+    handBntHandler(e);
 
-      const playerHand = button.innerText;
-      const computerHand = randomHand[Math.floor(Math.random() * 3)];
-
-      if (
-        (playerHand === 'Rock' && computerHand === 'Rock') ||
-        (playerHand === 'Sicssors' && computerHand === 'Sicssors') ||
-        (playerHand === 'Paper' && computerHand === 'Paper')
-      )
-        result.innerText = 'draw!';
-      else if (
-        (playerHand === 'Rock' && computerHand === 'Sicssors') ||
-        (playerHand === 'Sicssors' && computerHand === 'Paper') ||
-        (playerHand === 'Paper' && computerHand === 'Rock')
-      ) {
-        result.innerText = 'win!';
-        playerScore.innerText = Number(playerScore.innerText) + 1;
-      } else if (
-        (playerHand === 'Rock' && computerHand === 'Paper') ||
-        (playerHand === 'Sicssors' && computerHand === 'Rock') ||
-        (playerHand === 'Paper' && computerHand === 'Sicssors')
-      ) {
-        result.innerText = 'lose!';
-        computeScore.innerText = Number(computeScore.innerText) + 1;
-      }
-
-      if (count === 0) {
-        if (Number(computeScore.innerText) === Number(playerScore.innerText))
-          setTimeout(() => (result.innerText = 'Final Result : DRAW!'), 1000);
-        else {
-          const status =
-            Number(playerScore.innerText) > Number(computeScore.innerText)
-              ? 'WIN!'
-              : 'LOSE!';
-          setTimeout(
-            () => (result.innerText = `Final Result : ${status}`),
-            1000
-          );
-        }
-      }
-    });
+    if (--leftCount.textContent === 0) viewFinalResult();
   });
 }
 
 main();
-
-// 버튼이 눌리면 횟수 확인
-// 0번 보다 많으면 실행
-// 횟수 감소
-// 컴퓨터 가위바위보 중에 랜덤 뽑기
-// 클릭한 버튼의 내용 확인
-// 승패 계산
-// 결과 발표
-// 만약 버튼이 0이라면 파이널 우승자출력
