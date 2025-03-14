@@ -42,3 +42,11 @@ button:hover{
   display: none;
 }
 
+#correct{
+  background-color: #72d967e8;
+}
+
+#incorrect{
+  background-color: #ff3535ba
+}
+
