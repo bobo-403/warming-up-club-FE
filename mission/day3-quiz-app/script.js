@@ -4,6 +4,19 @@ async function getData() {
   return response.json();
 }
 
+// 문제와 선지 생성
+function createQuiz(data) {
+  const id = document.getElementById('id');
+  const question = document.getElementById('question');
+  id.textContent = data.id;
+  question.textContent = data.question;
+
+  const choices = document.querySelectorAll('.option');
+  choices.forEach((choice, idx) => {
+    choice.textContent = data.choices[idx];
+  });
+}
+
 // 선지 버튼을 선택했을때 이벤트
 //  선택한 것이 정답인 경우
 //    선택한 선지를 초록색
