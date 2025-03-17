@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
     <title>Quiz App</title>
   </head>
   <body>
     <div class="quiz-box">
-      <div class="quiz">1. 5 + 7</div>
-      <div class="option-box">
-        <button class="option">1</button>
-        <button class="option">1</button>
-        <button class="option">1</button>
-        <button class="option">1</button>
+      <div class="quiz"><span id="id"></span>. <span id="question"></span></div>
+      <div class="buttonWrapper">
+        <div class="option-box">
+          <button class="option"></button>
+          <button class="option"></button>
+          <button class="option"></button>
+          <button class="option"></button>
+        </div>
+        <button class="next hidden">next</button>
+        <button class="restart hidden">restart</button>
       </div>
-      <button class="next hidden">next</button>
-      <button class="restart hidden">restart</button>
     </div>
   </body>
 </html>
