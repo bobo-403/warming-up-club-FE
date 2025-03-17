@@ -17,6 +17,7 @@ function createQuiz(data) {
   const choices = document.querySelectorAll('.option');
   choices.forEach((choice, idx) => {
     choice.textContent = data.choices[idx];
+    choice.removeAttribute('id');
   });
 }
 
@@ -47,6 +48,12 @@ function viewResult(e, data) {
   restart.classList.remove('hidden');
 }
 
+function viewNextQuiz(e, data) {
+  createQuiz(data);
+  const next = document.querySelector('.next');
+  next.classList.add('hidden');
+}
+
 async function main() {
   const data = await getData();
 
@@ -54,9 +61,10 @@ async function main() {
   choiceBox.addEventListener('click', (e) => {
     if (e.target.tagName !== 'BUTTON') return;
 
-    if (e.target.textContent === 'next') return console.log('next');
+    if (e.target.textContent === 'next')
+      return viewNextQuiz(e, data[++quizIndex]);
 
-    if (e.target.textContent === 'restart') return console.log('restart');
+    if (e.target.textContent === 'restart') return;
 
     viewResult(e, data[quizIndex]);
   });
