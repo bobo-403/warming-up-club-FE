@@ -1,3 +1,6 @@
+// 현재 문제 번호
+let quizIndex = 0;
+
 // 퀴즈 data 불러오기
 async function getData() {
   const response = await fetch('./data.json');
@@ -16,6 +19,23 @@ function createQuiz(data) {
     choice.textContent = data.choices[idx];
   });
 }
+
+async function main() {
+  const data = await getData();
+
+  const choiceBox = document.querySelector('.buttonWrapper');
+  choiceBox.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'BUTTON') return;
+
+    if (e.target.textContent === 'next') return console.log('next');
+
+    if (e.target.textContent === 'restart') return console.log('restart');
+  });
+
+  createQuiz(data[quizIndex]);
+}
+
+main();
 
 // 선지 버튼을 선택했을때 이벤트
 //  선택한 것이 정답인 경우
