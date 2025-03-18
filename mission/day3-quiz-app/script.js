@@ -38,20 +38,37 @@ function viewResult(e, data) {
 
   if (e.target.textContent !== data.answer) e.target.id = 'incorrect';
 
-  if (quizIndex < 10) {
+  if (quizIndex < 9) {
     const next = document.querySelector('.next');
     next.classList.remove('hidden');
     return;
   }
 
-  const restart = document.querySelector('.next');
+  const restart = document.querySelector('.restart');
   restart.classList.remove('hidden');
 }
+
+// next 버튼 선택했을때 이벤트
+//  next 버튼 없애기기
+//  다음 문제 불러오기
+//  선지 버튼 색 원래 상태로
 
 function viewNextQuiz(e, data) {
   createQuiz(data);
   const next = document.querySelector('.next');
   next.classList.add('hidden');
+}
+
+// restart 버튼 선택했을때 이벤트
+//  restart 버튼 삭제
+//  퀴즈 초기 상태로 변환
+//  다시 시작
+function reset(e, data) {
+  quizIndex = 0;
+  const restart = document.querySelector('.restart');
+  restart.classList.add('hidden');
+
+  createQuiz(data);
 }
 
 async function main() {
@@ -64,7 +81,7 @@ async function main() {
     if (e.target.textContent === 'next')
       return viewNextQuiz(e, data[++quizIndex]);
 
-    if (e.target.textContent === 'restart') return;
+    if (e.target.textContent === 'restart') return reset(e, data[0]);
 
     viewResult(e, data[quizIndex]);
   });
@@ -73,13 +90,3 @@ async function main() {
 }
 
 main();
-
-// next 버튼 선택했을때 이벤트
-//  next 버튼 없애기기
-//  다음 문제 불러오기
-//  선지 버튼 색 원래 상태로
-
-// restart 버튼 선택했을때 이벤트
-//  restart 버튼 삭제
-//  퀴즈 초기 상태로 변환
-//  다시 시작
