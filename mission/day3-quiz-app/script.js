@@ -38,6 +38,10 @@ function viewResult(e, data) {
 
   if (e.target.textContent !== data.answer) e.target.id = 'incorrect';
 
+  choices.forEach((choice) => {
+    choice.disabled = true;
+  });
+
   if (quizIndex < 9) {
     const next = document.querySelector('.next');
     next.classList.remove('hidden');
@@ -57,6 +61,11 @@ function viewNextQuiz(e, data) {
   createQuiz(data);
   const next = document.querySelector('.next');
   next.classList.add('hidden');
+
+  const choices = document.querySelectorAll('.option');
+  choices.forEach((choice) => {
+    choice.disabled = false;
+  });
 }
 
 // restart 버튼 선택했을때 이벤트
