@@ -1,0 +1,52 @@
+body{
+  padding: 30px 20%;
+}
+
+.alarm{
+  background-color: #747474;
+  color: white;
+  padding: 10px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+label{
+  display: block;
+  font-size: large;
+  font-weight: bold;
+}
+
+input{
+  width: 98%;
+  padding: 5px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: solid 1px #e0dddd;
+}
+
+input:focus{
+  outline: solid 2px #a19e9e;
+}
+
+button{
+  width: 100%;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.head{
+  font-size: large;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.book-item{
+  display: flex;
+  justify-content:  space-around;
+  padding: 10px;
+  border-bottom: solid 1px lightgrey;
+}
