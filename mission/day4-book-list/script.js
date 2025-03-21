@@ -4,6 +4,20 @@
 //    입력하라는 경고 메시지
 //  있다면
 //    입력란을 다시 초기화
+
+function getData() {
+  const nameInput = document.getElementById('name');
+  const authorInput = document.getElementById('author');
+
+  const bookName = nameInput.value;
+  const author = authorInput.value;
+
+  nameInput.value = '';
+  authorInput.value = '';
+
+  return [bookName, author];
+}
+
 //    입력값을 book-item으로 추가
 //    입력 완료 되었다는 알림 추가
 //    3초 후 알림 삭제
