@@ -60,6 +60,11 @@ function registerBook(e) {
   setTimeout(() => removeAlarm(alarm), 3000);
 }
 
+const submit = document.querySelector('button');
+submit.addEventListener('click', (e) => {
+  registerBook(e);
+});
+
 // 등록된 도서 삭제 버튼을 눌렀을 때
 // 표에서 해당 book-item 정보 삭제
 // 삭제 알림 추가
