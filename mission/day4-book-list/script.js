@@ -47,6 +47,19 @@ function removeAlarm(alarm) {
   alarmWrapper.removeChild(alarm);
 }
 
+function registerBook(e) {
+  e.preventDefault();
+
+  const [bookName, author] = getData();
+  if (bookName === '' || author === '')
+    return alert('책 이름과 저자 이름을 입력해주세요!');
+
+  addBookItem(bookName, author);
+  const alarm = addAlarm('Book recored has been added');
+
+  setTimeout(() => removeAlarm(alarm), 3000);
+}
+
 // 등록된 도서 삭제 버튼을 눌렀을 때
 // 표에서 해당 book-item 정보 삭제
 // 삭제 알림 추가
