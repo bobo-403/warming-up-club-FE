@@ -32,6 +32,15 @@ function addBookItem(bookName, author) {
 }
 
 //    입력 완료 되었다는 알림 추가
+function addAlarm(message) {
+  const alarmWrapper = document.querySelector('.alarm-wrapper');
+  const alarm = document.createElement('div');
+  alarm.className = 'alarm';
+  alarm.textContent = message;
+  alarmWrapper.appendChild(alarm);
+  return alarm;
+}
+
 //    3초 후 알림 삭제
 
 // 등록된 도서 삭제 버튼을 눌렀을 때
