@@ -19,6 +19,18 @@ function getData() {
 }
 
 //    입력값을 book-item으로 추가
+function addBookItem(bookName, author) {
+  const bookWrapper = document.querySelector('.book-wrapper');
+  const bookItem = document.createElement('div');
+  bookItem.className = 'book-item';
+  bookItem.innerHTML = `
+        <span>${bookName}</span>
+        <span>${author}</span>
+        <span>X</span>
+      `;
+  bookWrapper.appendChild(bookItem);
+}
+
 //    입력 완료 되었다는 알림 추가
 //    3초 후 알림 삭제
 
