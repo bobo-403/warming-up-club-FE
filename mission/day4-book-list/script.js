@@ -41,7 +41,11 @@ function addAlarm(message) {
   return alarm;
 }
 
-//    3초 후 알림 삭제
+//    알림 삭제
+function removeAlarm(alarm) {
+  const alarmWrapper = document.querySelector('.alarm-wrapper');
+  alarmWrapper.removeChild(alarm);
+}
 
 // 등록된 도서 삭제 버튼을 눌렀을 때
 // 표에서 해당 book-item 정보 삭제
