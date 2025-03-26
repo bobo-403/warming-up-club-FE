@@ -26,7 +26,7 @@ function addBookItem(bookName, author) {
   bookItem.innerHTML = `
         <span>${bookName}</span>
         <span>${author}</span>
-        <span>X</span>
+        <span class="delete-button" onclick="deleteBook(this)">X</span>
       `;
   bookWrapper.appendChild(bookItem);
 }
@@ -55,7 +55,7 @@ function registerBook(e) {
     return alert('책 이름과 저자 이름을 입력해주세요!');
 
   addBookItem(bookName, author);
-  const alarm = addAlarm('Book recored has been added');
+  const alarm = addAlarm('Book record has been added');
 
   setTimeout(() => removeAlarm(alarm), 3000);
 }
@@ -68,3 +68,11 @@ submit.addEventListener('click', (e) => {
 // 등록된 도서 삭제 버튼을 눌렀을 때
 // 표에서 해당 book-item 정보 삭제
 // 삭제 알림 추가
+
+function deleteBook(element) {
+  const bookItem = element.parentElement;
+  bookItem.remove();
+
+  const alarm = addAlarm('Book record has been removed');
+  setTimeout(() => removeAlarm(alarm), 3000);
+}
